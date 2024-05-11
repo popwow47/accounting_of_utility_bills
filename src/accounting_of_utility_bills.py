@@ -179,7 +179,7 @@ def main(page: ft.Page):
             electro.disabled = True
             trash.disabled = True
             date_button.disabled = False
-            #enable_fields()
+
             page.update()
 
 
@@ -191,7 +191,7 @@ def main(page: ft.Page):
             gas.disabled = True
             trash.disabled = True
             date_button.disabled = False
-            #enable_fields()
+
             page.update()
 
 
@@ -203,7 +203,7 @@ def main(page: ft.Page):
             electro.disabled = True
             trash.disabled = True
             date_button.disabled = False
-            #enable_fields()
+
 
             page.update()
 
@@ -221,9 +221,9 @@ def main(page: ft.Page):
             previous_readings.disabled = True
             sum.disabled = True
             until_price.disabled = True
-            #if date.value !="":
+
             add_btn.disabled = False
-                #page.update()
+
 
 
             page.update()
@@ -231,7 +231,7 @@ def main(page: ft.Page):
 
         else:
             clear_fields()
-            #payment.value = ""
+
             gas.disabled = False
             gas_delivery.disabled = False
             water.disabled = False
@@ -252,7 +252,7 @@ def main(page: ft.Page):
         lst = []
         lv.controls.clear()
         page.update()
-        #page.add(lv)
+
         try:
             with connect('bills.db') as db:
                 cur = db.cursor()
@@ -263,18 +263,18 @@ def main(page: ft.Page):
         except Error as er:
             logging.exception(er, exc_info=True)
             alert_banner(er)
-            #print(er)
+
 
         rows = cur.fetchall()
 
-        if  gas.value == True:#director.value == "":
+        if  gas.value == True:#
             for row in rows:
                 lst.append(row)
                 text_id.value = row[0]
                 text_account.value = row[1]
                 text_data.value = row[2]
                 text_previus.value = row[3]
-                #text_director.value = row[4]
+
                 text_sum.value = row[4]
                 text_payment.value = row[5]
 
@@ -283,7 +283,7 @@ def main(page: ft.Page):
 
                 page.update()
 
-        elif gas_delivery.value == True:#aktors.disabled == True:
+        elif gas_delivery.value == True:
             for row in rows:
                 lst.append(row)
                 text_id.value = row[0]
@@ -317,7 +317,7 @@ def main(page: ft.Page):
 
         elif trash.value == True:
             for row in rows:
-                #lst.append(row)
+
                 text_id.value = row[0]
                 text_account.value = row[1]
                 text_data.value = row[2]
@@ -432,10 +432,7 @@ def main(page: ft.Page):
 
 
 
-        # else:
-        #     pass
-        #
-        #     sqlite_get_all_data(table)
+
 
     def get_sql_data(name_table,name_column,value_column):
         lv.controls.clear()
@@ -596,7 +593,7 @@ def main(page: ft.Page):
             db.commit()
         except Error as er:
 
-            # print(type(er))
+
             alert_banner(er)
             logging.exception(er, exc_info=True)
 
@@ -605,35 +602,19 @@ def main(page: ft.Page):
         disable_fields()
         disable_value_chekboxes()
         enable_chekboxes()
-        # date.value = ""
-        # gas.value = False
-        # electro.value = False
-        # water.value = False
-        # trash.value = False
-        # gas_delivery.value = False
-        # gas.disabled = False
-        # gas_delivery.disabled = False
-        # electro.disabled = False
-        # water.disabled = False
-        # trash.disabled = False
+
         add_btn.disabled = True
         date_button.disabled = True
-        # date.disabled = True
-        # until_price.disabled = True
-        # previous_readings.disabled = True
-        # current_readings.disabled = True
-        # sum.disabled = True
-        # payment.disabled = True
-        # account_number.disabled = True
+
         page.update()
 
 
 
 
     def validate(e):
-        if account_number.value  and until_price.value  and previous_readings.value and current_readings.value and date.value != "":#all([account_number.value,until_price,previous_readings,current_readings,date.value]):
+        if account_number.value  and until_price.value  and previous_readings.value and current_readings.value and date.value != "":
             add_btn.disabled = False
-            #difference = int(current_readings.value) - int(previous_readings.value)
+
             sum.value = int(current_readings.value) - int(previous_readings.value)
             payment.value = (int(current_readings.value) - int(previous_readings.value))*float(until_price.value)
 
@@ -674,7 +655,7 @@ def main(page: ft.Page):
     lv = ft.ListView(expand=1, spacing=10, padding=0, auto_scroll=True, divider_thickness=1)
 
 
-    gas = ft.Checkbox(label="Газ", value= False, on_change=checkboxes_changed)  # ,col={"sm": 6, "md": 4, "xl": 2})
+    gas = ft.Checkbox(label="Газ", value= False, on_change=checkboxes_changed)
     gas_delivery = ft.Checkbox(label="Доставка газа", value= False, on_change= checkboxes_changed)
     electro = ft.Checkbox(label="Электроснобжение", value= False,on_change= checkboxes_changed )
     water = ft.Checkbox(label="Водоснабжение", value= False, on_change= checkboxes_changed)
@@ -728,7 +709,7 @@ def main(page: ft.Page):
     buttons_panel = ft.Row([date_button,add_btn,get_btn])
 
 
-    page.add(input_panel,buttons_panel,results_panel,lv)#ft.Container([lv]))
+    page.add(input_panel,buttons_panel,results_panel,lv)
 
 
 
