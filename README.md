@@ -27,3 +27,4 @@ git clone https://github.com/popwow47/accounting_of_utility_bills.git
 4. Click the **“Add to DB”** button to record all data
     ![Image alt](https://github.com/popwow47/accounting_of_utility_bills/blob/main/screenshots/Screenshot_4.png)
 5. To view previous payment records, click the **“Get from DB”** button
+    ![Image alt](https://github.com/popwow47/accounting_of_utility_bills/blob/main/screenshots/Screenshot_5.png)
