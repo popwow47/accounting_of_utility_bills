@@ -19,7 +19,11 @@ git clone https://github.com/popwow47/accounting_of_utility_bills.git
 2. Run file **accounting_of_utility_bills.exe**:
 ## Usage
 1. Select the required checkbox with the name of the service
+    ![Image alt](https://github.com/popwow47/accounting_of_utility_bills/blob/main/screenshots/Screenshot_1.png)
 2. Click on the date button
+    ![Image alt](https://github.com/popwow47/accounting_of_utility_bills/blob/main/screenshots/Screenshot_2.png)
 3. Fill in the meter reading fields
+    ![Image alt](https://github.com/popwow47/accounting_of_utility_bills/blob/main/screenshots/Screenshot_3.png)
 4. Click the **“Add to DB”** button to record all data
+    ![Image alt](https://github.com/popwow47/accounting_of_utility_bills/blob/main/screenshots/Screenshot_4.png)
 5. To view previous payment records, click the **“Get from DB”** button
