@@ -13,8 +13,9 @@ This project is written in Python for calculating utility bills. It is designed 
 To install and run the utility, follow the instructions:
 
 1. Clone the repository:
-git clone https://github.com/yourusername/yourrepository.git
-
+```shell   
+git clone https://github.com/popwow47/accounting_of_utility_bills.git
+```
 2. Run the accounting_of_utility_bills.exe utility:
 ## Usage
 1. Select the required checkbox with the name of the service
